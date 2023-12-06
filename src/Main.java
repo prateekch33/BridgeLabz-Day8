@@ -25,18 +25,24 @@ public class Main {
             return c;
         }
     }
+    public static String max(String a,String b,String c) {
+
+        if(a.compareTo(b)>0 && a.compareTo(c)>0) {
+            return a;
+        } else if (b.compareTo(a)>0 && b.compareTo(c)>0){
+            return b;
+        } else {
+            return c;
+        }
+    }
     public static void main(String[] args) {
         Scanner in=new Scanner(System.in);
-        System.out.println("Enter 3 Integers.");
-        int a=in.nextInt();
-        int b=in.nextInt();
-        int c=in.nextInt();
-        System.out.println("Enter 3 Decimals.");
-        double a1=in.nextDouble();
-        double b1=in.nextDouble();
-        double c1=in.nextDouble();
-        System.out.printf("Maximum among all the 3 integers.: %d\n",max(a,b,c));
-        System.out.printf("Maximum among all the 3 decimals.: %f\n",max(a1,b1,c1));
+        System.out.println("Enter 3 Strings.");
+        String a=in.nextLine();
+        String b=in.nextLine();
+        String c=in.nextLine();
+        System.out.printf("Maximum among all the 3 Strings.: %s\n",max(a,b,c));
+
         in.close();
     }
 }

@@ -1,8 +1,17 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main<T extends Comparable<T>> {
+    T a,b,c;
+    public Main(T a,T b,T c) {
+        this.a=a;
+        this.b=b;
+        this.c=c;
+    }
 
-    public static <T extends Comparable<T>> T max(T a,T b,T c) {
+    public T max(){
+        return max(a,b,c);
+    }
+    private static <T extends Comparable<T>> T max(T a,T b,T c) {
         if(a.compareTo(b)>0 && a.compareTo(c)>0) {
             return a;
         } else if (b.compareTo(a)>0 && b.compareTo(c)>0){
@@ -27,7 +36,8 @@ public class Main {
                     Integer a=in.nextInt();
                     Integer b=in.nextInt();
                     Integer c=in.nextInt();
-                    System.out.printf("Maximum among all the 3 Integers: %s\n",max(a,b,c));
+                    Main<Integer> ob=new Main<>(a,b,c);
+                    System.out.printf("Maximum among all the 3 Integers: %s\n",ob.max());
                     break;
                 }
                 case 2: {
@@ -35,7 +45,8 @@ public class Main {
                     Double a=in.nextDouble();
                     Double b=in.nextDouble();
                     Double c=in.nextDouble();
-                    System.out.printf("Maximum among all the 3 Integers: %s\n",max(a,b,c));
+                    Main<Double> ob=new Main<>(a,b,c);
+                    System.out.printf("Maximum among all the 3 Integers: %s\n",ob.max());
                     break;
                 }
                 case 3: {
@@ -43,7 +54,8 @@ public class Main {
                     String a=in.nextLine();
                     String b=in.nextLine();
                     String c=in.nextLine();
-                    System.out.printf("Maximum among all the 3 Integers: %s\n",max(a,b,c));
+                    Main<String> ob=new Main<>(a,b,c);
+                    System.out.printf("Maximum among all the 3 Integers: %s\n",ob.max());
                     break;
                 }
                 case 4:
